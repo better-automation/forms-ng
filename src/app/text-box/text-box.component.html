@@ -1,0 +1,7 @@
+<div>
+    <label>{{labelText}}</label>
+    <span *ngIf="isRequired">*</span>
+</div>
+<div><input [disabled]="disabled" type="text" (blur)="touch()" [(ngModel)]="value" (ngModelChange)="changeValue($event)" /></div>
+
+<app-validation-errors [control]="control" [labelText]="labelText"></app-validation-errors>

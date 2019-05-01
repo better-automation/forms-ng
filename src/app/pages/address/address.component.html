@@ -1,0 +1,8 @@
+<h1>Enter Your Address</h1>
+
+<app-address-form [value]="address" (submitForm)="submit($event)" sessionKey="app::pages::address::app-address-form">
+    <button>Submit</button>
+    <button type="button" (click)="reset()">Reset</button>
+</app-address-form>
+
+<pre>{{displayText}}</pre>

@@ -1,0 +1,8 @@
+<form [formGroup]="formGroup" (submit)="onSubmit($event)">
+    <app-text-box [isRequired]="true" labelText="Name" formControlName="name"></app-text-box>
+    <app-text-box [isRequired]="true" labelText="Email" formControlName="email"></app-text-box>
+
+    <app-address-form [formGroup]="formGroup.get('address')"></app-address-form>
+
+    <ng-content></ng-content>
+</form>

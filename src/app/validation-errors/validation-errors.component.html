@@ -1,0 +1,6 @@
+<ng-container *ngIf="errors">
+  <div *ngIf="errors.email"><span>* {{labelText}} must be a valid email address.</span></div>
+  <div *ngIf="errors.maxlength"><span>* The length of {{labelText}} must not exceed {{errors.maxlength.requiredLength}} characters.</span></div>
+  <div *ngIf="errors.required"><span>* {{labelText}} is required.</span></div>
+  <div *ngIf="errors.zipcode"><span>* {{labelText}} must be a valid US zip code.</span></div>
+</ng-container>

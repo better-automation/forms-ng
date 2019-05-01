@@ -17,6 +17,11 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "forms-ng": [
+        "dist/forms-ng"
+      ]
+    }
   }
 }

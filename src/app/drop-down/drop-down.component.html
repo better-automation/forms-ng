@@ -1,0 +1,9 @@
+<div>
+    <label>{{labelText}}</label>
+    <span *ngIf="isRequired">*</span>
+</div>
+<div>
+  <select [disabled]="disabled" type="text" (blur)="touch()" [(ngModel)]="value" (ngModelChange)="changeValue($event)" >
+    <option *ngFor="let code of codes" [ngValue]="code.value">{{code.label}}</option>
+  </select>
+<app-validation-errors [control]="control" [labelText]="labelText"></app-validation-errors>

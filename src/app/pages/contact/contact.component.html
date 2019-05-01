@@ -1,0 +1,8 @@
+<h1>Enter Your Contact Info</h1>
+
+<app-contact-form (submitForm)="submit($event)" sessionKey="app-component::app-contact-form">
+    <button>Submit</button>
+    <button type="button" (click)="reset()">Reset</button>
+</app-contact-form>
+
+<pre>{{displayText}}</pre>
