@@ -19,7 +19,7 @@
     "@angular/platform-browser": "~8.2.14",
     "@angular/platform-browser-dynamic": "~8.2.14",
     "@angular/router": "~8.2.14",
-    "codes-ng": "0.0.2",
+    "codes-ng": "0.0.5",
     "core-js": "^2.5.4",
     "rxjs": "~6.5.4",
     "session-object": "^1.0.4",
