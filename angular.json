@@ -167,5 +167,8 @@
       }
     }
   },
-  "defaultProject": "forms-ng-lib"
+  "defaultProject": "forms-ng-lib",
+  "cli": {
+    "analytics": "bcd3e268-5855-421e-b00d-f62acb040c5c"
+  }
 }

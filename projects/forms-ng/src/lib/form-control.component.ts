@@ -22,8 +22,8 @@ export abstract class FormControlComponent implements ControlValueAccessor {
         return this.controlContainer.control.get(this.formControlName);
     }
 
-    public changeValue = () => { };
-    protected touchControl = () => { };
+    public changeValue: (value: any) => void;
+    protected touchControl: () => void;
 
     constructor(
         @Optional() @Host() @SkipSelf()
@@ -32,11 +32,11 @@ export abstract class FormControlComponent implements ControlValueAccessor {
         private formState: FormStateService
     ) { }
 
-    registerOnChange(fn: any) {
+    registerOnChange(fn: (value: any) => void) {
         this.changeValue = fn;
     }
 
-    registerOnTouched(fn: any) {
+    registerOnTouched(fn: () => void) {
         this.touchControl = fn;
     }
 
