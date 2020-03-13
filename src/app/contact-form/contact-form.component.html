@@ -1,4 +1,4 @@
-<form [formGroup]="formGroup" (submit)="onSubmit($event)">
+<form [formGroup]="formGroup" (submit)="onSubmit()">
     <app-text-box [isRequired]="true" labelText="Name" formControlName="name"></app-text-box>
     <app-text-box [isRequired]="true" labelText="Email" formControlName="email"></app-text-box>
 

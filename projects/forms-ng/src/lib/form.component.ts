@@ -1,11 +1,11 @@
 import { FormStateService } from './form-state.service';
-import { EventEmitter, Injectable, Input, OnDestroy, OnInit, Output } from '@angular/core';
+import { EventEmitter, Directive, Input, OnDestroy, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, AbstractControl } from '@angular/forms';
 
 import { SessionObject } from 'session-object';
 import { Subscription } from 'rxjs';
 
-@Injectable()
+@Directive()
 export abstract class FormComponent<TModel> implements OnInit, OnDestroy {
     private initialValue: TModel;
     private sessionData: SessionObject<TModel>;

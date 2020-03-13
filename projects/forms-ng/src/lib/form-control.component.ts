@@ -1,8 +1,8 @@
 import { FormStateService } from './form-state.service';
 import { ControlContainer, ControlValueAccessor, FormBuilder, AbstractControl } from '@angular/forms';
-import { EventEmitter, Host, Injectable, Input, Optional, Output, SkipSelf } from '@angular/core';
+import { EventEmitter, Host, Input, Optional, Output, SkipSelf, Directive } from '@angular/core';
 
-@Injectable()
+@Directive()
 export abstract class FormControlComponent implements ControlValueAccessor {
     // tslint:disable-next-line:variable-name
     private _disabled: boolean;

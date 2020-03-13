@@ -1,8 +1,8 @@
 ﻿import { FormStateService } from './form-state.service';
 import { AbstractControl, ValidationErrors } from '@angular/forms';
-import { Injectable, Input } from '@angular/core';
+import { Directive, Input } from '@angular/core';
 
-@Injectable()
+@Directive()
 export abstract class ValidationErrorsComponent {
     @Input() control: AbstractControl;
 
