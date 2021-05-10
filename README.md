@@ -1,20 +1,27 @@
 # forms-ng
 
-Note: Documentation is in progress. More coming soon!
+Note: This package is under development. Expect breaking changes in upcoming releases.
 
 ## Purpose
 
-This package was created because I wanted an easy way to reuse form behavior in Angular while allowing flexibility of the design. It uses abstract classes that can be extended by components. I also wanted typescript type safety on the form data.
+* reuse form behavior in Angular
+* allow flexibility of design
+* type safety
+
+## Installation
+```
+npm i forms-ng
+```
 
 ## Validation Errors
 
-The ValidationErrorsComponent class holds the logic that shows and hides the validation errors. The validation errors are shown when the form control is touched. Validation errors are also shown for all form controls when the user attempts to submit the form with invalid data.
+The FormValidationErrorsComponent class holds the logic that shows and hides the validation errors. The validation errors are shown when the form control is touched. Validation errors are also shown for all form controls when the user attempts to submit the form with invalid data.
 
-Create a class that extends ValidationErrorsComponent to adopt this functionality.
+Create a class that extends FormValidationErrorsComponent to adopt this functionality.
 
-app-validation-errors.component.ts
+validation-errors.component.ts
 ```typescript
-import { ValidationErrorsComponent } from 'forms-ng';
+import { FormValidationErrorsComponent } from 'forms-ng';
 import { Component, Input } from '@angular/core';
 
 @Component({
@@ -22,14 +29,14 @@ import { Component, Input } from '@angular/core';
   templateUrl: './validation-errors.component.html',
   styleUrls: ['./validation-errors.component.css']
 })
-export class AppValidationErrorsComponent extends ValidationErrorsComponent {
+export class ValidationErrorsComponent extends FormValidationErrorsComponent {
   @Input() labelText = 'Field';
 }
 ```
 
-Create a template to show the errors. The errors property is provided by the ValidationErrorsComponent class.
+Create a template to show the errors. The errors property is provided by the FormValidationErrorsComponent class.
 
-app-validation-errors.component.html
+validation-errors.component.html
 ```html
 <ng-container *ngIf="errors">
   <div *ngIf="errors.email"><span>* {{labelText}} must be a valid email address.</span></div>
@@ -66,7 +73,10 @@ export class TextBoxComponent extends FormControlComponent {
 }
 ```
 
-Create a template for the form control. The touch and changeValue functions and the disabled property are provided by the FormControlComponentClass.
+Create a template for the form control. 
+* The touch and changeValue functions and the disabled and control properties are provided by the FormControlComponent class.
+* Send the control value to the FormValidationErrorsComponent to enable validation error display behavior.
+
 
 text-box.component.html
 ```html
@@ -92,7 +102,8 @@ export class Contact {
 }
 ```
 
-Create a component that implements FormComponent<T>. I like to export the createFormGroup function so it can be used in nested forms (more on this later).
+Create a component that implements FormComponent<T>. 
+* Export the createFormGroup function so it can be used in nested forms (optional).
 
 contact-form.component.ts
 ```typescript
@@ -113,7 +124,8 @@ export class ContactFormComponent extends FormComponent<Contact> {
 }
 ```
 
-Create a template for the form using form controls. The formGroup property and onSubmit function are provided by the FormComponent class
+Create a template for the form using form controls. 
+* The formGroup property and onSubmit function are provided by the FormComponent class
 
 contact-form.component.html
 ```html
@@ -127,6 +139,12 @@ contact-form.component.html
 ```
 
 ## Using It
+
+Wire up the form to your own submit function.
+* The submitForm event is provided by the FormComponent class
+* The event is fired when the form is submitted and passes validation.
+
+Add a button so the user can submit the form.
 
 example-contact.component.html
 ```html

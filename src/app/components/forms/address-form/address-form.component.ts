@@ -1,8 +1,8 @@
 import { FormComponent } from 'forms-ng';
 import { Component } from '@angular/core';
-import { Address } from '../address.model';
+import { Address } from '../../../address.model';
 import { FormBuilder, Validators } from '@angular/forms';
-import * as validators from '../validation-errors/validators';
+import * as validators from '../validators';
 
 export function addressFormGroup(formBuilder: FormBuilder, data: Address) {
   return formBuilder.group({

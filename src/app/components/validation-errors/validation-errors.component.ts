@@ -1,4 +1,4 @@
-import { ValidationErrorsComponent } from 'forms-ng';
+import { FormValidationErrorsComponent } from 'forms-ng';
 import { Component, Input } from '@angular/core';
 
 @Component({
@@ -6,6 +6,6 @@ import { Component, Input } from '@angular/core';
   templateUrl: './validation-errors.component.html',
   styleUrls: ['./validation-errors.component.css']
 })
-export class AppValidationErrorsComponent extends ValidationErrorsComponent {
+export class AppValidationErrorsComponent extends FormValidationErrorsComponent {
   @Input() labelText = 'Field';
 }

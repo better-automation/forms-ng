@@ -1,15 +1,14 @@
-import { AppStateService } from './../../app-state.service';
+import { AppStateService } from '../../app-state.service';
 import { Component } from '@angular/core';
 import { FormService } from 'forms-ng';
 import { Contact } from 'src/app/contact.model';
 import { Address } from 'src/app/address.model';
 
 @Component({
-  selector: 'app-address',
-  templateUrl: './address.component.html',
-  styleUrls: ['./address.component.css']
+  selector: 'app-address-page',
+  templateUrl: './address-page.component.html'
 })
-export class AddressComponent {
+export class AddressPageComponent {
   displayText = '';
 
   get address() {

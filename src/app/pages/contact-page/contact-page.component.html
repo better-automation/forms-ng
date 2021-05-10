@@ -6,3 +6,7 @@
 </app-contact-form>
 
 <pre>{{displayText}}</pre>
+
+<a *ngIf="displayText" (click)="editAddress()" href="#">
+    Edit Address
+</a>

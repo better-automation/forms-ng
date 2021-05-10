@@ -1,6 +1,6 @@
 {
   "name": "forms-ng",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "peerDependencies": {
     "@angular/common": "> 2",
     "@angular/core": "> 2"

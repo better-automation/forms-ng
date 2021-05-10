@@ -1,12 +1,12 @@
-import { AddressComponent } from './pages/address/address.component';
+import { AddressPageComponent } from './pages/address-page/address-page.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { ContactComponent } from './pages/contact/contact.component';
+import { ContactPageComponent } from './pages/contact-page/contact-page.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'address', pathMatch: 'full' },
-  { path: 'address', component: AddressComponent },
-  { path: 'contact', component: ContactComponent }
+  { path: 'address', component: AddressPageComponent },
+  { path: 'contact', component: ContactPageComponent }
 ];
 
 @NgModule({

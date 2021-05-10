@@ -3,7 +3,7 @@ import { AbstractControl, ValidationErrors } from '@angular/forms';
 import { Directive, Input } from '@angular/core';
 
 @Directive()
-export abstract class ValidationErrorsComponent {
+export abstract class FormValidationErrorsComponent {
     @Input() control: AbstractControl;
 
     public get errors(): ValidationErrors {

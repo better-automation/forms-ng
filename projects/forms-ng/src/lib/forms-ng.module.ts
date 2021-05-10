@@ -3,10 +3,10 @@ import { FormStateService } from './form-state.service';
 import { NgModule, ModuleWithProviders } from '@angular/core';
 
 @NgModule()
-export class FormsModule {
-    public static forRoot(): ModuleWithProviders<FormsModule> {
+export class FormsNgModule {
+    public static forRoot(): ModuleWithProviders<FormsNgModule> {
         return {
-            ngModule: FormsModule,
+            ngModule: FormsNgModule,
             providers: [
                 FormStateService,
                 FormService

@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormComponent } from 'forms-ng';
-import { Contact } from '../contact.model';
+import { Contact } from '../../../contact.model';
 import { FormBuilder, Validators } from '@angular/forms';
 import { addressFormGroup } from '../address-form/address-form.component';
-import { Address } from '../address.model';
+import { Address } from '../../../address.model';
 
 export function contactFormGroup(formBuilder: FormBuilder, data: Contact) {
   return formBuilder.group({
