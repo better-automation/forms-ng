@@ -6,6 +6,7 @@
     "@angular/core": "> 2"
   },
   "dependencies": {
-    "session-object": "^1.0.4"
+    "session-object": "^1.0.4",
+    "tslib": "^2.0.0"
   }
 }
