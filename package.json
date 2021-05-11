@@ -21,6 +21,7 @@
     "@angular/router": "~11.2.13",
     "codes-ng": "0.0.5",
     "core-js": "^2.5.4",
+    "forms-ng": "0.0.8",
     "rxjs": "~6.5.4",
     "session-object": "^1.0.4",
     "tslib": "^2.0.0",

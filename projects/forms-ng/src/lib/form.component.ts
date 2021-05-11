@@ -92,4 +92,8 @@ export abstract class FormComponent<TModel> implements OnInit, OnDestroy {
         this.submitted = true;
         this.submitForm.emit(this.formGroup.value);
     }
+
+    public reset() {
+        this.formGroup = this.createFormGroup(this.formBuilder, this.value);
+    }
 }
