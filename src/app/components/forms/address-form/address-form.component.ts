@@ -1,7 +1,7 @@
 import { FormComponent } from 'forms-ng';
 import { Component } from '@angular/core';
 import { Address } from '../../../address.model';
-import { FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import * as validators from '../validators';
 
 export function addressFormGroup(formBuilder: FormBuilder, data: Address) {
@@ -21,4 +21,8 @@ export function addressFormGroup(formBuilder: FormBuilder, data: Address) {
 })
 export class AddressFormComponent extends FormComponent<Address> {
   createFormGroup = addressFormGroup;
+
+  onSetFormGroup(formGroup: FormGroup) {
+    console.log("Form Group has been set.", formGroup);
+  }
 }

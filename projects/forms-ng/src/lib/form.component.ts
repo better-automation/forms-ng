@@ -29,7 +29,16 @@ export abstract class FormComponent<TModel> implements OnInit, OnDestroy {
         return (this.formGroup) ? this.formGroup.value : this.initialValue;
     }
 
-    @Input() formGroup: FormGroup;
+    private _formGroup: FormGroup;
+    @Input() set formGroup(formGroup: FormGroup) {
+        this._formGroup = formGroup;
+
+        this.onSetFormGroup(formGroup);
+    }
+    get formGroup() {
+        return this._formGroup;
+    }
+    
     @Input() sessionKey: string;
 
     @Output() submitForm = new EventEmitter<TModel>();
@@ -93,7 +102,9 @@ export abstract class FormComponent<TModel> implements OnInit, OnDestroy {
         this.submitForm.emit(this.formGroup.value);
     }
 
-    public reset() {
-        this.formGroup = this.createFormGroup(this.formBuilder, this.value);
+    protected onSetFormGroup(formGroup: FormGroup) { }
+
+    public createNewFormGroup(data: TModel): FormGroup {
+        return this.createFormGroup(this.formBuilder, data);
     }
 }
